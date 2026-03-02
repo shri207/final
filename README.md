@@ -1,0 +1,756 @@
+    
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHer – Women Safety Platform</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: #6A0DAD;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #ffb6f9;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(106, 13, 173, 0.7), rgba(255, 105, 180, 0.6)),
+                url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .sos-btn {
+            padding: 15px 35px;
+            border: none;
+            background: red;
+            color: white;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sos-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 25px rgba(255, 0, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+
+        /* Section style with 3D/gradient backgrounds */
+        .section {
+            padding: 80px 10%;
+            text-align: center;
+            background: linear-gradient(145deg, #fce4ff, #ffe6fa);
+            border-radius: 20px;
+            margin: 30px 5%;
+            box-shadow: 0 15px 30px rgba(106, 13, 173, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+        }
+
+        .section h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #6A0DAD;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #ffffff, #ffe6fa);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+            box-shadow: 0 25px 50px rgba(106, 13, 173, 0.35);
+            background: linear-gradient(145deg, #ffe6fa, #ffccf2);
+        }
+
+        .card i {
+            font-size: 30px;
+            color: #6A0DAD;
+            margin-bottom: 15px;
+        }
+
+        .contacts p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        iframe {
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+        .route-img {
+            width: 80%;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .route-img:hover {
+            transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+            box-shadow: 0 25px 50px rgba(106, 13, 173, 0.35);
+        }
+
+        .profile-card {
+            background: linear-gradient(145deg, #ffffff, #ffe6fa);
+            padding: 25px;
+            border-radius: 15px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+            box-shadow: 0 25px 50px rgba(106, 13, 173, 0.35);
+            background: linear-gradient(145deg, #ffe6fa, #ffccf2);
+        }
+
+        footer {
+            background: #6A0DAD;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Dark Mode */
+        .dark {
+            background: #121212;
+            color: white;
+        }
+
+        .dark .card,
+        .dark .profile-card,
+        .dark .section {
+            background: #1e1e1e;
+            color: white;
+        }
+
+        .dark footer {
+            background: #000;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .route-img {
+                width: 95%;
+            }
+
+            .section {
+                margin: 20px 3%;
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div><strong>SafeHer</strong></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sos">SOS</a></li>
+            <li><a href="#route">Safe Route</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+        <button onclick="toggleDark()">🌙</button>
+    </nav>
+
+    <section id="home" class="hero">
+        <div>
+            <h1>Your Safety, Our Priority</h1>
+            <p>"Technology should not just connect people — it should protect them."</p>
+            <button class="sos-btn pulse" onclick="activateSOS()">🚨 Emergency SOS</button>
+        </div>
+    </section>
+
+    <section id="stats-section" class="section">
+        <h2>Key Features</h2>
+        <div class="stats">
+            <div class="card">
+                <i class="fa fa-shield"></i>
+                <h2>24/7</h2>
+                <p>Emergency Support</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-users"></i>
+                <h2>100+</h2>
+                <p>Safety Resources</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-location-dot"></i>
+                <h2>Safe Routes</h2>
+                <p>Guided Navigation</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sos" class="section">
+        <h2>Emergency SOS System</h2>
+        <button class="sos-btn" onclick="sendAlert()">Trigger Alert</button>
+
+        <div class="contacts">
+            <p><i class="fa fa-phone"></i> Police: 100</p>
+            <p><i class="fa fa-ambulance"></i> Ambulance: 108</p>
+            <p><i class="fa fa-shield"></i> Women Helpline: 181</p>
+        </div>
+
+        <iframe src="https://maps.google.com/maps?q=police%20station&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%"
+            height="250"></iframe>
+    </section>
+
+    <section id="route" class="section">
+        <h2>Safe Route Navigation</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtDQcBzstNNXV1OcqPkz_jnD3wUbfXhut3UQ&s"
+            class="route-img">
+        <p>✔ Avoid isolated areas at night</p>
+        <button class="sos-btn" onclick="shareLocation()">Share Location</button>
+    </section>
+
+    <section id="resources" class="section">
+        <h2>Safety Resources</h2>
+        <div class="stats">
+            <div class="card">
+                <i class="fa fa-scale-balanced"></i>
+                <h3>Legal Rights</h3>
+                <p>Know your protection laws</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-laptop"></i>
+                <h3>Cyber Crime</h3>
+                <p>Report online abuse safely</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-hand-fist"></i>
+                <h3>Self Defense</h3>
+                <p>Basic self-defense tips</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="section">
+        <h2>User Profile</h2>
+        <div class="profile-card">
+            <p><strong>Name:</strong> Sharmila</p>
+            <p><strong>Emergency Contact 1:</strong> 9876543210</p>
+            <p><strong>Emergency Contact 2:</strong> 9123456780</p>
+            <p><strong>Last Alert:</strong> March 2, 2026</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 SafeHer | Empowering Women Through Technology</p>
+    </footer>
+
+    <script>
+        function activateSOS() {
+            alert("🚨 SOS Activated! Help is on the way.");
+        }
+
+        function sendAlert() {
+            alert("Emergency Alert Sent Successfully!");
+        }
+
+        function shareLocation() {
+            alert("Location Shared with Emergency Contacts!");
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+</body>
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHer – Women Safety Platform</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: #6A0DAD;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #ffb6f9;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(106, 13, 173, 0.7), rgba(255, 105, 180, 0.6)),
+                url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .sos-btn {
+            padding: 15px 35px;
+            border: none;
+            background: red;
+            color: white;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sos-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 25px rgba(255, 0, 0, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+
+        /* Section style with 3D/gradient backgrounds */
+        .section {
+            padding: 80px 10%;
+            text-align: center;
+            background: linear-gradient(145deg, #fce4ff, #ffe6fa);
+            border-radius: 20px;
+            margin: 30px 5%;
+            box-shadow: 0 15px 30px rgba(106, 13, 173, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+        }
+
+        .section h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #6A0DAD;
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #ffffff, #ffe6fa);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+            box-shadow: 0 25px 50px rgba(106, 13, 173, 0.35);
+            background: linear-gradient(145deg, #ffe6fa, #ffccf2);
+        }
+
+        .card i {
+            font-size: 30px;
+            color: #6A0DAD;
+            margin-bottom: 15px;
+        }
+
+        .contacts p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        iframe {
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+        .route-img {
+            width: 80%;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .route-img:hover {
+            transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+            box-shadow: 0 25px 50px rgba(106, 13, 173, 0.35);
+        }
+
+        .profile-card {
+            background: linear-gradient(145deg, #ffffff, #ffe6fa);
+            padding: 25px;
+            border-radius: 15px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+            box-shadow: 0 25px 50px rgba(106, 13, 173, 0.35);
+            background: linear-gradient(145deg, #ffe6fa, #ffccf2);
+        }
+
+        footer {
+            background: #6A0DAD;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Dark Mode */
+        .dark {
+            background: #121212;
+            color: white;
+        }
+
+        .dark .card,
+        .dark .profile-card,
+        .dark .section {
+            background: #1e1e1e;
+            color: white;
+        }
+
+        .dark footer {
+            background: #000;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .route-img {
+                width: 95%;
+            }
+
+            .section {
+                margin: 20px 3%;
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div><strong>SafeHer</strong></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sos">SOS</a></li>
+            <li><a href="#route">Safe Route</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+        <button onclick="toggleDark()">🌙</button>
+    </nav>
+
+    <section id="home" class="hero">
+        <div>
+            <h1>Your Safety, Our Priority</h1>
+            <p>"Technology should not just connect people — it should protect them."</p>
+            <button class="sos-btn pulse" onclick="activateSOS()">🚨 Emergency SOS</button>
+        </div>
+    </section>
+
+    <section id="stats-section" class="section">
+        <h2>Key Features</h2>
+        <div class="stats">
+            <div class="card">
+                <i class="fa fa-shield"></i>
+                <h2>24/7</h2>
+                <p>Emergency Support</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-users"></i>
+                <h2>100+</h2>
+                <p>Safety Resources</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-location-dot"></i>
+                <h2>Safe Routes</h2>
+                <p>Guided Navigation</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sos" class="section">
+        <h2>Emergency SOS System</h2>
+        <button class="sos-btn" onclick="sendAlert()">Trigger Alert</button>
+
+        <div class="contacts">
+            <p><i class="fa fa-phone"></i> Police: 100</p>
+            <p><i class="fa fa-ambulance"></i> Ambulance: 108</p>
+            <p><i class="fa fa-shield"></i> Women Helpline: 181</p>
+        </div>
+
+        <iframe src="https://maps.google.com/maps?q=police%20station&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%"
+            height="250"></iframe>
+    </section>
+
+    <section id="route" class="section">
+        <h2>Safe Route Navigation</h2>
+        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764b5c" class="route-img">
+        <p>✔ Avoid isolated areas at night</p>
+        <button class="sos-btn" onclick="shareLocation()">Share Location</button>
+    </section>
+
+    <section id="resources" class="section">
+        <h2>Safety Resources</h2>
+        <div class="stats">
+            <div class="card">
+                <i class="fa fa-scale-balanced"></i>
+                <h3>Legal Rights</h3>
+                <p>Know your protection laws</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-laptop"></i>
+                <h3>Cyber Crime</h3>
+                <p>Report online abuse safely</p>
+            </div>
+            <div class="card">
+                <i class="fa fa-hand-fist"></i>
+                <h3>Self Defense</h3>
+                <p>Basic self-defense tips</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="section">
+        <h2>User Profile</h2>
+        <div class="profile-card">
+            <p><strong>Name:</strong> Sharmila</p>
+            <p><strong>Emergency Contact 1:</strong> 9876543210</p>
+            <p><strong>Emergency Contact 2:</strong> 9123456780</p>
+            <p><strong>Last Alert:</strong> March 2, 2026</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 SafeHer | Empowering Women Through Technology</p>
+    </footer>
+
+    <script>
+        function activateSOS() {
+            alert("🚨 SOS Activated! Help is on the way.");
+        }
+
+        function sendAlert() {
+            alert("Emergency Alert Sent Successfully!");
+        }
+
+        function shareLocation() {
+            alert("Location Shared with Emergency Contacts!");
+        }
+
+        function toggleDark() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+</body>
+
+>>>>>>> e3b2bfb1a6f4af47519bd71ddb6bf4a4f7aaecc9
+</html>
